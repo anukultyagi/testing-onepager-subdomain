@@ -1,11 +1,9 @@
 export default function sitemap() {
   return [
     {
-      url:
-        "https://yourdomain.com",
+      url: "https://stay.uniliv.in",
 
-      lastModified:
-        new Date(),
+      lastModified: new Date(),
 
       priority: 1,
     },

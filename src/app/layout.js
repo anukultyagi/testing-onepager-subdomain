@@ -34,7 +34,7 @@ export const metadata = {
     description:
       "Premium co-living with WiFi, meals, housekeeping and zero brokerage.",
 
-    url: "https://uniliv.in",
+    url: "https://stay.uniliv.in",
 
     siteName: "Uniliv",
 
@@ -51,8 +51,8 @@ export const metadata = {
   },
 
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
   },
 };
 
