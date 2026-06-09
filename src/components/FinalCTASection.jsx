@@ -5,7 +5,7 @@ import scrollToLeadForm from "@/lib/scrollToLeadForm";
 
 export default function FinalCTASection() {
     return (
-        <Section className="pt-10 lg:pt-16">
+        <Section className="pt-10 lg:pt-16 scroll-mt-28">
             <Container>
                 <div className="overflow-hidden rounded-[40] bg-[#FFF4ED] px-8 py-12 lg:px-14 lg:py-16">
 

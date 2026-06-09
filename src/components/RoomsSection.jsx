@@ -45,7 +45,7 @@ const rooms = [
 
 export default function RoomsSection() {
     return (
-        <Section id="rooms-section" background="bg-[#FFFDFB]">
+        <Section id="rooms-section" background="bg-[#FFFDFB]" className="scroll-mt-28">
             <Container>
                 <SectionHeading
                     centered

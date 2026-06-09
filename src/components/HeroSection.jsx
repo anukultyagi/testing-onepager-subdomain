@@ -41,7 +41,7 @@ const fadeUp = {
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-linear-to-b from-[#FFF9F5] via-[#FFFDFB] to-white">
+    <section  className="relative overflow-hidden bg-linear-to-b from-[#FFF9F5] via-[#FFFDFB] to-white scroll-mt-28">
 
       {/* Ambient Background */}
       {/* Warm ambient glow */}

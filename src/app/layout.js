@@ -70,6 +70,9 @@ export default function RootLayout({ children }) {
 
         <Script id="meta-pixel" strategy="afterInteractive">
           {`
+    ${
+      process.env.NEXT_PUBLIC_META_PIXEL_ID
+        ? `
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
       n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -102,20 +105,25 @@ export default function RootLayout({ children }) {
         'track',
         'PageView'
       );
-    `}
+    `
+        : ""
+    }
+  `}
         </Script>
 
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{
-              display: "none",
-            }}
-            src={`https://www.facebook.com/tr?id=${process.env.NEXT_PUBLIC_META_PIXEL_ID}&ev=PageView&noscript=1`}
-            alt=""
-          />
-        </noscript>
+        {process.env.NEXT_PUBLIC_META_PIXEL_ID && (
+          <noscript>
+            <img
+              height="1"
+              width="1"
+              style={{
+                display: "none",
+              }}
+              src={`https://www.facebook.com/tr?id=${process.env.NEXT_PUBLIC_META_PIXEL_ID}&ev=PageView&noscript=1`}
+              alt=""
+            />
+          </noscript>
+        )}
       </body>
     </html>
   );

@@ -11,7 +11,7 @@ const mealFeatures = [
 
 export default function MealsSection() {
   return (
-    <Section id="meals-section">
+    <Section id="meals-section" className="scroll-mt-28">
       <Container>
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           

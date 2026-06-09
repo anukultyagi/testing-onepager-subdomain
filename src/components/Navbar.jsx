@@ -37,6 +37,9 @@ export default function Navbar() {
             block: "start",
         });
     };
+    const supportPhone =
+        process.env
+            .NEXT_PUBLIC_SUPPORT_PHONE;
 
     return (
         <header className="sticky top-0 z-50 border-b border-white/20 bg-white/70 backdrop-blur-xl">
@@ -78,10 +81,11 @@ export default function Navbar() {
 
                     {/* Phone */}
                     <a
-                        href="tel:+919999999999"
+                        href={`tel:${process.env
+                            .NEXT_PUBLIC_SUPPORT_PHONE}`}
                         className="hidden rounded-full border border-(--border) bg-white px-4 py-3 text-sm font-medium text-(--text-primary) transition hover:border-[#F38744]/30 lg:flex"
                     >
-                        📞 +91 99999 99999
+                        📞 +{supportPhone}
                     </a>
 
                     {/* CTA */}

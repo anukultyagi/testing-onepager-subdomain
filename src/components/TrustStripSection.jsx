@@ -12,7 +12,7 @@ const trustedBrands = [
 
 export default function TrustStripSection() {
   return (
-    <Section className="py-12 lg:py-16">
+    <Section className="py-12 lg:py-16 scroll-mt-28">
       <Container>
         <div className="rounded-[28] border border-[--border] bg-white/60 px-6 py-10 backdrop-blur-sm">
           

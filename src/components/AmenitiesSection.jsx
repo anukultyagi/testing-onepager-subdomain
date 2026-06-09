@@ -27,7 +27,7 @@ const amenities = [
 
 export default function AmenitiesSection() {
   return (
-    <Section id="amenities-section" background="bg-[#FFFDFB]">
+    <Section id="amenities-section" background="bg-[#FFFDFB]" className="scroll-mt-28">
       <Container>
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           

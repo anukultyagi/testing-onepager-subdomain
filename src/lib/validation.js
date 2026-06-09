@@ -1,9 +1,7 @@
 export function validateLead(body) {
   const fullName = body.fullName?.trim();
 
-  const phoneNumber = body.phoneNumber
-    ?.replace(/\D/g, "")
-    .trim();
+  const phoneNumber = body.phoneNumber?.replace(/\D/g, "").trim();
 
   const city = body.city?.trim() || "";
 
@@ -25,10 +23,14 @@ export function validateLead(body) {
     };
   }
 
-  if (
-    phoneNumber.length < 10 ||
-    phoneNumber.length > 15
-  ) {
+  if (!city) {
+    return {
+      isValid: false,
+      message: "Please select a city",
+    };
+  }
+
+  if (phoneNumber.length < 10 || phoneNumber.length > 15) {
     return {
       isValid: false,
       message: "Invalid phone number",

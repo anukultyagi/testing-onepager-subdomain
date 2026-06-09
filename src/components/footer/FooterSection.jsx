@@ -23,7 +23,7 @@ const footerLinks = {
 
 export default function FooterSection() {
     return (
-        <footer className="border-t border-(--border) bg-white py-16">
+        <footer className="border-t border-(--border) bg-white py-16 scroll-mt-28">
             <Container>
                 <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
 

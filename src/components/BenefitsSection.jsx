@@ -22,7 +22,7 @@ const benefits = [
 
 export default function BenefitsSection() {
   return (
-    <Section>
+    <Section className="scroll-mt-28">
       <Container>
         <SectionHeading
           centered
