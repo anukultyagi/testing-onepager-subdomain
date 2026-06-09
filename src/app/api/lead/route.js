@@ -1,10 +1,12 @@
 import { NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
+import { validateLead } from "@/lib/validation";
 
 export async function POST(request) {
   try {
     const body = await request.json();
 
+    // Honeypot spam protection
     if (body.website) {
       return NextResponse.json(
         {
@@ -13,38 +15,72 @@ export async function POST(request) {
         },
         {
           status: 400,
-        }
+        },
       );
     }
 
-    const { error } = await supabase
-      .from("leads")
-      .insert([
-        {
-          full_name: body.fullName,
-          phone_number: body.phoneNumber,
-          city: body.city,
-          user_type: body.userType,
-          source: "meta_ads",
-        },
-      ]);
+    // Validate form data
+    const validation = validateLead(body);
 
-    if (error) {
-      throw error;
+    if (!validation.isValid) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: validation.message,
+        },
+        {
+          status: 400,
+        },
+      );
     }
 
-    return NextResponse.json({
-      success: true,
-    });
+    const { fullName, phoneNumber, city, userType } = validation.cleanedData;
+
+    // Insert into Supabase
+    const { error } = await supabase.from("leads").insert([
+      {
+        full_name: fullName,
+        phone_number: phoneNumber,
+        city,
+        user_type: userType,
+        source: "meta_ads",
+      },
+    ]);
+
+    if (error) {
+      console.error("Supabase insert error:", error);
+
+      return NextResponse.json(
+        {
+          success: false,
+          message: "Failed to save lead",
+        },
+        {
+          status: 500,
+        },
+      );
+    }
+
+    return NextResponse.json(
+      {
+        success: true,
+        message: "Lead submitted successfully",
+      },
+      {
+        status: 200,
+      },
+    );
   } catch (error) {
+    console.error("Lead API Error:", error);
+
     return NextResponse.json(
       {
         success: false,
-        message: error.message,
+        message: "Something went wrong",
       },
       {
         status: 500,
-      }
+      },
     );
   }
 }

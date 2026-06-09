@@ -4,221 +4,268 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { generateLead } from "@/lib/metaPixel";
 
-
 const cities = [
-    "Noida",
-    "Delhi",
-    "Gurugram",
-    "Bangalore",
-    "Hyderabad",
+  "Noida",
+  "Delhi",
+  "Gurugram",
+  "Bangalore",
+  "Hyderabad",
 ];
 
 export default function LeadForm() {
-    const router = useRouter();
+  const router = useRouter();
 
-    const [formData, setFormData] = useState({
-        fullName: "",
-        phoneNumber: "",
-        city: "",
-        userType: "Student",
-        website: "",
+  const [formData, setFormData] =
+    useState({
+      fullName: "",
+      phoneNumber: "",
+      city: "",
+      userType: "Student",
+      website: "",
     });
 
-    const [isSubmitting, setIsSubmitting] =
-        useState(false);
+  const [isSubmitting, setIsSubmitting] =
+    useState(false);
 
-    const handleInputChange = (event) => {
-        const { name, value } =
-            event.target;
+  const [errorMessage, setErrorMessage] =
+    useState("");
 
-        setFormData((previousData) => ({
-            ...previousData,
-            [name]: value,
-        }));
-    };
+  const handleInputChange = (
+    event
+  ) => {
+    const { name, value } =
+      event.target;
 
-    const handleSubmit = async (
-        event
-    ) => {
-        event.preventDefault();
+    // Phone number restriction
+    if (name === "phoneNumber") {
+      const numericValue =
+        value.replace(/\D/g, "");
 
-        try {
-            setIsSubmitting(true);
+      setFormData(
+        (previousData) => ({
+          ...previousData,
+          [name]: numericValue,
+        })
+      );
 
-            const response =
-                await fetch("/api/lead", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type":
-                            "application/json",
-                    },
-                    body: JSON.stringify(
-                        formData
-                    ),
-                });
+      return;
+    }
 
-            const data =
-                await response.json();
+    setFormData((previousData) => ({
+      ...previousData,
+      [name]: value,
+    }));
+  };
 
-            if (!data.success) {
-                throw new Error(
-                    data.message
-                );
-            }
-            generateLead();
-            router.push(
-                "/thank-you"
-            );
-        } catch (error) {
-            console.error(error);
-            alert(
-                "Failed to submit"
-            );
-        } finally {
-            setIsSubmitting(false);
-        }
-    };
+  const handleSubmit = async (
+    event
+  ) => {
+    event.preventDefault();
 
-    return (
-        <form
-            id="lead-form"
-            onSubmit={handleSubmit}
-            className="space-y-5"
-        >
-            {/* Name */}
-            <div>
-                <input
-                    type="text"
-                    name="fullName"
-                    placeholder="Full Name"
-                    value={
-                        formData.fullName
-                    }
-                    onChange={
-                        handleInputChange
-                    }
-                    required
-                    className="h-14 w-full rounded-[16] border border-(--border) bg-white px-5 outline-none transition focus:border-[#F38744]"
-                />
-            </div>
+    // Prevent duplicate clicks
+    if (isSubmitting) return;
 
-            {/* Phone */}
-            <div className="flex overflow-hidden rounded-[16] border border-(--border) focus-within:border-[#F38744]">
-                <div className="flex items-center border-r border-(--border) bg-[#FFF4ED] px-4 font-medium text-(--text-primary)">
-                    +91
-                </div>
+    setErrorMessage("");
 
-                <input
-                    type="tel"
-                    name="phoneNumber"
-                    placeholder="Phone Number"
-                    pattern="[0-9]{10}"
-                    inputMode="numeric"
-                    value={
-                        formData.phoneNumber
-                    }
-                    onChange={
-                        handleInputChange
-                    }
-                    required
-                    maxLength={10}
-                    className="h-14 w-full px-5 outline-none"
-                />
-            </div>
+    try {
+      setIsSubmitting(true);
 
-            {/* User Type */}
-            <div>
-                <p className="mb-3 text-sm font-medium text-(--text-secondary)">
-                    I am a
-                </p>
+      const response =
+        await fetch("/api/lead", {
+          method: "POST",
+          headers: {
+            "Content-Type":
+              "application/json",
+          },
+          body: JSON.stringify(
+            formData
+          ),
+        });
 
-                <div className="grid grid-cols-2 gap-3">
-                    {[
-                        "Student",
-                        "Professional",
-                    ].map((type) => (
-                        <button
-                            key={type}
-                            type="button"
-                            onClick={() =>
-                                setFormData(
-                                    (
-                                        previousData
-                                    ) => ({
-                                        ...previousData,
-                                        userType:
-                                            type,
-                                    })
-                                )
-                            }
-                            className={`rounded-[16] border px-4 py-4 text-sm font-medium transition ${formData.userType ===
-                                type
-                                ? "border-[#F38744] bg-[#FFF4ED] text-[#F38744]"
-                                : "border-(--border) bg-white text-(--text-secondary) hover:border-[#F38744]/30"
-                                }`}
-                        >
-                            {type}
-                        </button>
-                    ))}
-                </div>
-            </div>
+      const data =
+        await response.json();
 
-            {/* City */}
-            <select
-                name="city"
-                value={formData.city}
-                onChange={
-                    handleInputChange
-                }
-                required
-                className="h-14 w-full rounded-[16] border border-(--border) bg-white px-5 outline-none transition focus:border-[#F38744]"
-            >
-                <option value="">
-                    Select Preferred City
-                </option>
+      if (!response.ok) {
+        throw new Error(
+          data.message ||
+            "Failed to submit"
+        );
+      }
 
-                {cities.map((city) => (
-                    <option
-                        key={city}
-                        value={city}
-                    >
-                        {city}
-                    </option>
-                ))}
-            </select>
+      generateLead();
 
-            {/* Honeypot */}
-            <input
-                type="text"
-                name="website"
-                className="hidden"
-                tabIndex="-1"
-                autoComplete="off"
-                value={
-                    formData.website
-                }
-                onChange={
-                    handleInputChange
-                }
-            />
+      router.push(
+        "/thank-you"
+      );
+    } catch (error) {
+      console.error(error);
 
-            {/* CTA */}
+      setErrorMessage(
+        error.message ||
+          "Something went wrong"
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <form
+      id="lead-form"
+      onSubmit={handleSubmit}
+      className="space-y-5"
+    >
+      {/* Name */}
+      <div>
+        <input
+          type="text"
+          name="fullName"
+          placeholder="Full Name"
+          value={
+            formData.fullName
+          }
+          onChange={
+            handleInputChange
+          }
+          disabled={isSubmitting}
+          required
+          className="h-14 w-full rounded-[16px] border border-(--border) bg-white px-5 outline-none transition focus:border-[#F38744] disabled:cursor-not-allowed disabled:bg-gray-100"
+        />
+      </div>
+
+      {/* Phone */}
+      <div className="flex overflow-hidden rounded-[16px] border border-(--border) focus-within:border-[#F38744]">
+        <div className="flex items-center border-r border-(--border) bg-[#FFF4ED] px-4 font-medium text-(--text-primary)">
+          +91
+        </div>
+
+        <input
+          type="tel"
+          name="phoneNumber"
+          placeholder="Phone Number"
+          inputMode="numeric"
+          value={
+            formData.phoneNumber
+          }
+          onChange={
+            handleInputChange
+          }
+          disabled={isSubmitting}
+          required
+          maxLength={10}
+          className="h-14 w-full px-5 outline-none disabled:cursor-not-allowed disabled:bg-gray-100"
+        />
+      </div>
+
+      {/* User Type */}
+      <div>
+        <p className="mb-3 text-sm font-medium text-(--text-secondary)">
+          I am a
+        </p>
+
+        <div className="grid grid-cols-2 gap-3">
+          {[
+            "Student",
+            "Professional",
+          ].map((type) => (
             <button
-                type="submit"
-                disabled={
-                    isSubmitting
-                }
-                className="h-14 w-full rounded-[18] bg-[#F38744] text-base font-semibold text-white transition hover:scale-[1.01] hover:opacity-95 disabled:cursor-not-allowed disabled:opacity-70"
+              key={type}
+              type="button"
+              disabled={
+                isSubmitting
+              }
+              onClick={() =>
+                setFormData(
+                  (
+                    previousData
+                  ) => ({
+                    ...previousData,
+                    userType:
+                      type,
+                  })
+                )
+              }
+              className={`rounded-[16px] border px-4 py-4 text-sm font-medium transition disabled:cursor-not-allowed ${
+                formData.userType ===
+                type
+                  ? "border-[#F38744] bg-[#FFF4ED] text-[#F38744]"
+                  : "border-(--border) bg-white text-(--text-secondary) hover:border-[#F38744]/30"
+              }`}
             >
-                {isSubmitting
-                    ? "Submitting..."
-                    : "Schedule a Visit"}
+              {type}
             </button>
+          ))}
+        </div>
+      </div>
 
-            {/* Trust text */}
-            <p className="text-center text-xs text-(--text-muted)">
-                🔒 Your data is secure
-            </p>
-        </form>
-    );
+      {/* City */}
+      <select
+        name="city"
+        value={formData.city}
+        onChange={
+          handleInputChange
+        }
+        disabled={isSubmitting}
+        required
+        className="h-14 w-full rounded-[16px] border border-(--border) bg-white px-5 outline-none transition focus:border-[#F38744] disabled:cursor-not-allowed disabled:bg-gray-100"
+      >
+        <option value="">
+          Select Preferred City
+        </option>
+
+        {cities.map((city) => (
+          <option
+            key={city}
+            value={city}
+          >
+            {city}
+          </option>
+        ))}
+      </select>
+
+      {/* Honeypot */}
+      <input
+        type="text"
+        name="website"
+        className="hidden"
+        tabIndex="-1"
+        autoComplete="off"
+        value={
+          formData.website
+        }
+        onChange={
+          handleInputChange
+        }
+      />
+
+      {/* Error Message */}
+      {errorMessage && (
+        <p className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-600">
+          {errorMessage}
+        </p>
+      )}
+
+      {/* CTA */}
+      <button
+        type="submit"
+        disabled={
+          isSubmitting
+        }
+        className="flex h-14 w-full items-center justify-center rounded-[18px] bg-[#F38744] text-base font-semibold text-white transition hover:scale-[1.01] hover:opacity-95 disabled:cursor-not-allowed disabled:opacity-70"
+      >
+        {isSubmitting ? (
+          <span>
+            Submitting...
+          </span>
+        ) : (
+          "Schedule a Visit"
+        )}
+      </button>
+
+      {/* Trust text */}
+      <p className="text-center text-xs text-(--text-muted)">
+        🔒 Your data is secure
+      </p>
+    </form>
+  );
 }

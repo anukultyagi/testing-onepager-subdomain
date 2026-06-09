@@ -1,5 +1,6 @@
 import AmenitiesSection from "@/components/AmenitiesSection";
 import BenefitsSection from "@/components/BenefitsSection";
+import FinalCTASection from "@/components/FinalCTASection";
 
 import FooterSection from "@/components/footer/FooterSection";
 import HeroSection from "@/components/HeroSection";
@@ -17,6 +18,8 @@ export default function HomePage() {
       <AmenitiesSection />
       <MealsSection />
       <TestimonialsSection />
+      <BenefitsSection />
+      <FinalCTASection />
       <FooterSection />
     </main>
   );

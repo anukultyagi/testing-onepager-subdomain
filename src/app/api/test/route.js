@@ -23,7 +23,6 @@ export async function POST(request) {
         {
           full_name: body.fullName,
           phone_number: body.phoneNumber,
-          email: body.email,
           city: body.city,
           source: "meta_ads",
         },
