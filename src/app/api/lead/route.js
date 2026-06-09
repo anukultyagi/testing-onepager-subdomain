@@ -61,6 +61,25 @@ export async function POST(request) {
       );
     }
 
+    // Send to Google Sheets
+    try {
+      await fetch(process.env.GOOGLE_SHEET_WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          full_name: fullName,
+          phone_number: phoneNumber,
+          city,
+          user_type: userType,
+          source: "meta_ads",
+        }),
+      });
+    } catch (sheetError) {
+      console.error("Google Sheet Error:", sheetError);
+    }
+
     return NextResponse.json(
       {
         success: true,

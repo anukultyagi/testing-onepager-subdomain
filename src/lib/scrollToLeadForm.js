@@ -1,13 +1,16 @@
 export default function scrollToLeadForm() {
-  const leadForm =
-    document.getElementById(
-      "lead-form"
-    );
+  const form = document.getElementById("lead-form");
 
-  if (!leadForm) return;
+  if (!form) return;
 
-  leadForm.scrollIntoView({
+  const navbarHeight = 96;
+
+  const elementPosition = form.getBoundingClientRect().top + window.scrollY;
+
+  const offsetPosition = elementPosition - navbarHeight;
+
+  window.scrollTo({
+    top: offsetPosition,
     behavior: "smooth",
-    block: "center",
   });
 }

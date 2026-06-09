@@ -3,23 +3,24 @@
 import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
 import LeadForm from "@/components/ui/LeadForm";
+import Navbar from "./Navbar";
 
 const stats = [
   {
-    value: "8+",
-    label: "Cities",
+    value: "🏠",
+    label: "Fully Managed",
   },
   {
-    value: "10K+",
-    label: "Residents",
+    value: "🍽",
+    label: "Daily Meals",
+  },
+  {
+    value: "📶",
+    label: "Fast WiFi",
   },
   {
     value: "₹0",
     label: "Brokerage",
-  },
-  {
-    value: "4.9",
-    label: "Rating",
   },
 ];
 
@@ -41,17 +42,18 @@ const fadeUp = {
 
 export default function HeroSection() {
   return (
-    <section  className="relative overflow-hidden bg-linear-to-b from-[#FFF9F5] via-[#FFFDFB] to-white scroll-mt-28">
+    <section id="hero-section" className="relative overflow-hidden bg-linear-to-b from-[#FFF9F5] via-[#FFFDFB] to-white scroll-mt-28">
+      <Navbar />
 
       {/* Ambient Background */}
       {/* Warm ambient glow */}
-      <div className="absolute left-[-120] top-[-120] h-[420] w-[420] rounded-full bg-[#F38744]/12 blur-[120px]" />
+      <div className="absolute left-[-120] top-[-120] h-[420px] w-[420px] rounded-full bg-[#F38744]/12 blur-[120]" />
 
-      <div className="absolute right-[-120] top-[20%] h-[360] w-[360] rounded-full bg-orange-100 blur-[110px]" />
+      <div className="absolute right-[-120] top-[20%] h-[360px] w-[360px] rounded-full bg-orange-100 blur-[110]" />
 
-      <div className="absolute bottom-[-180] left-[30%] h-[280] w-[280] rounded-full bg-[#FFD9C2]/40 blur-[120px]" />
+      <div className="absolute bottom-[-180] left-[30%] h-[280px] w-[280px] rounded-full bg-[#FFD9C2]/40 blur-[120]" />
 
-      <Container className="relative z-10 py-14 md:py-20 lg:py-28">
+      <Container className="relative z-10 pt-28 pb-14 md:pt-32 md:pb-20 lg:pt-36 lg:pb-28">
         <div className="grid items-center gap-14 lg:grid-cols-[1.15fr_0.85fr]">
 
           {/* LEFT */}
@@ -75,9 +77,9 @@ export default function HeroSection() {
               custom={0.1}
               className="text-[44px] font-bold tracking-[-0.04em] text-black sm:text-[56px] lg:text-5xl lg:leading-[1.02]"
             >
-              Premium Co-Living Spaces{" "}
+              Premium Co-Living {" "}
               <span className="text-[#F38744] sm:text-[56px] lg:text-7xl">
-                That Feel Like Home
+                That Actually Feels Like Home
               </span>
             </motion.h1>
 
@@ -86,9 +88,9 @@ export default function HeroSection() {
               custom={0.2}
               className="mt-7 max-w-2xl text-lg leading-8 text-neutral-600 lg:text-xl"
             >
-              Fully managed rooms with WiFi,
-              meals, housekeeping and zero
-              brokerage.
+              Move into fully managed stays with meals,
+              WiFi, housekeeping and zero brokerage
+              designed for students & professionals.
             </motion.p>
 
             {/* Stats */}
@@ -154,16 +156,17 @@ export default function HeroSection() {
             className="relative"
           >
             {/* Decorative card behind */}
-            
+
             <div className="relative rounded-[32] border border-white/70 bg-white/75 shadow-[0_20px_60px_rgba(0,0,0,0.08)] p-7 backdrop-blur-xl md:p-8">
 
               <div className="mb-7">
                 <h2 className="text-2xl font-semibold text-[#D46A2C]">
-                  Check Availability
+                  Find Your Ideal Space
                 </h2>
 
                 <p className="mt-2 text-sm text-neutral-500">
-                  Find rooms near your preferred location.
+                  Tell us your preferences —
+                  we’ll recommend the best options.
                 </p>
               </div>
 
@@ -172,6 +175,6 @@ export default function HeroSection() {
           </motion.div>
         </div>
       </Container>
-    </section>
+    </section >
   );
 }

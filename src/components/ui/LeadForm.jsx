@@ -129,12 +129,12 @@ export default function LeadForm() {
           }
           disabled={isSubmitting}
           required
-          className="h-14 w-full rounded-[16px] border border-(--border) bg-white px-5 outline-none transition focus:border-[#F38744] disabled:cursor-not-allowed disabled:bg-gray-100"
+          className="h-14 w-full rounded-2xl border border-(--border) bg-white px-5 outline-none transition focus:border-[#F38744] disabled:cursor-not-allowed disabled:bg-gray-100"
         />
       </div>
 
       {/* Phone */}
-      <div className="flex overflow-hidden rounded-[16px] border border-(--border) focus-within:border-[#F38744]">
+      <div className="flex overflow-hidden rounded-2xl border border-(--border) focus-within:border-[#F38744]">
         <div className="flex items-center border-r border-(--border) bg-[#FFF4ED] px-4 font-medium text-(--text-primary)">
           +91
         </div>
@@ -185,7 +185,7 @@ export default function LeadForm() {
                   })
                 )
               }
-              className={`rounded-[16px] border px-4 py-4 text-sm font-medium transition disabled:cursor-not-allowed ${
+              className={`rounded-2xl border px-4 py-4 text-sm font-medium transition disabled:cursor-not-allowed ${
                 formData.userType ===
                 type
                   ? "border-[#F38744] bg-[#FFF4ED] text-[#F38744]"
@@ -207,7 +207,7 @@ export default function LeadForm() {
         }
         disabled={isSubmitting}
         required
-        className="h-14 w-full rounded-[16px] border border-(--border) bg-white px-5 outline-none transition focus:border-[#F38744] disabled:cursor-not-allowed disabled:bg-gray-100"
+        className="h-14 w-full rounded-2xl border border-(--border) bg-white px-5 outline-none transition focus:border-[#F38744] disabled:cursor-not-allowed disabled:bg-gray-100"
       >
         <option value="">
           Select Preferred City
