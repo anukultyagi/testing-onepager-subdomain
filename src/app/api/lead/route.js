@@ -63,7 +63,7 @@ export async function POST(request) {
 
     // Send to Google Sheets
     try {
-      await fetch(process.env.GOOGLE_SHEET_WEBHOOK_URL, {
+      fetch(process.env.GOOGLE_SHEET_WEBHOOK_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
