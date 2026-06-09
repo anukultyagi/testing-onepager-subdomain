@@ -23,6 +23,6 @@ body {
 
 @media (max-width: 1024px) {
   body {
-    padding-bottom: 90px;
+    padding-bottom: env(safe-area-inset-bottom, 90px);
   }
 }

@@ -1,7 +1,23 @@
 export const pageView = () => {
-  window.fbq?.("track", "PageView");
+  if (
+    typeof window !== "undefined" &&
+    window.fbq
+  ) {
+    window.fbq(
+      "track",
+      "PageView"
+    );
+  }
 };
 
 export const generateLead = () => {
-  window.fbq?.("track", "Lead");
+  if (
+    typeof window !== "undefined" &&
+    window.fbq
+  ) {
+    window.fbq(
+      "track",
+      "Lead"
+    );
+  }
 };
