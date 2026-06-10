@@ -16,9 +16,9 @@ export default function HomePage() {
       <TrustStripSection />
       <RoomsSection />
       <AmenitiesSection />
+      <BenefitsSection />
       <MealsSection />
       <TestimonialsSection />
-      <BenefitsSection />
       <FinalCTASection />
       <FooterSection />
     </main>

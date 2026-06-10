@@ -130,7 +130,7 @@ export default function RoomsSection() {
                                 </div>
 
                                 {/* CTA */}
-                                <div className="mt-6 flex gap-3">
+                                <div className="mt-6 flex sm:flex-row flex-col gap-3">
                                     <button
                                         onClick={scrollToLeadForm}
                                         className="flex text-sm flex-1 items-center justify-center gap-2 rounded-md bg-[#F38744] px-4 py-3 font-semibold text-white transition duration-300 hover:-translate-y-[2px] hover:opacity-90"

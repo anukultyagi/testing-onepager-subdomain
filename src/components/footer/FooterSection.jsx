@@ -1,120 +1,91 @@
 import Container from "@/components/ui/Container";
-
-const footerLinks = {
-    cities: [
-        "Noida",
-        "Gurugram",
-        "Bangalore",
-        "Hyderabad",
-    ],
-    company: [
-        "About",
-        "Locations",
-        "Amenities",
-        "Reviews",
-    ],
-    support: [
-        "FAQs",
-        "Privacy Policy",
-        "Terms",
-        "Contact",
-    ],
-};
+import {
+    Mail,
+    MapPin,
+    Phone,
+} from "lucide-react";
 
 export default function FooterSection() {
     return (
-        <footer className="border-t border-(--border) bg-white py-16 scroll-mt-28">
+        <footer className="relative overflow-hidden bg-[#FFF9F5] py-20">
+
+            {/* Subtle decorative glow */}
+            <div className="absolute left-1/2 top-0 h-[300px] w-[300px] -translate-x-1/2 rounded-full bg-[#F38744]/[0.03] blur-[100px]" />
+
             <Container>
-                <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+                <div className="relative text-center">
 
                     {/* Brand */}
-                    <div>
-                        <h3 className="text-2xl font-bold text-(--text-primary)">
+                    <div className="mx-auto max-w-xl">
+                        <h3 className="text-3xl font-semibold tracking-tight text-(--text-primary)">
                             Uniliv
                         </h3>
 
-                        <p className="mt-4 max-w-xs leading-7 text-(--text-secondary)">
-                            Premium co-living spaces
-                            designed for students and
-                            working professionals.
+                        <p className="mt-4 text-lg text-(--text-secondary)">
+                            Premium co-living for students &
+                            professionals.
                         </p>
 
-                        <div className="mt-6 flex gap-3">
-                            {[1, 2, 3].map((item) => (
-                                <div
-                                    key={item}
-                                    className="h-10 w-10 rounded-full bg-[#FFF4ED]"
-                                />
-                            ))}
+                        <p className="mt-2 text-sm text-(--text-muted)">
+                            Designed for stress-free living.
+                        </p>
+                    </div>
+
+                    {/* Contact row */}
+                    <div className="mt-10 flex flex-col items-center justify-center gap-5 text-sm text-(--text-secondary) sm:flex-row sm:flex-wrap sm:gap-8">
+
+                        <a
+                            href="tel:+919999999999"
+                            className="inline-flex items-center gap-2 transition hover:text-[#F38744]"
+                        >
+                            <Phone size={16} strokeWidth={1.8} />
+                            +91 99999 99999
+                        </a>
+
+                        <a
+                            href="mailto:hello@uniliv.com"
+                            className="inline-flex items-center gap-2 transition hover:text-[#F38744]"
+                        >
+                            <Mail size={16} strokeWidth={1.8} />
+                            hello@uniliv.com
+                        </a>
+
+                        <div className="inline-flex items-center gap-2">
+                            <MapPin size={16} strokeWidth={1.8} />
+                            Noida • Greater Noida • Delhi NCR
                         </div>
                     </div>
 
-                    {/* Cities */}
-                    <div>
-                        <h4 className="font-semibold text-(--text-primary)">
-                            Cities
-                        </h4>
+                    {/* Legal */}
+                    <div className="mt-10 flex items-center justify-center gap-6 text-sm text-(--text-muted)">
+                        <a
+                            href="/privacy-policy"
+                            className="transition hover:text-[#F38744]"
+                        >
+                            Privacy Policy
+                        </a>
 
-                        <div className="mt-5 space-y-3">
-                            {footerLinks.cities.map(
-                                (city) => (
-                                    <p
-                                        key={city}
-                                        className="text-(--text-secondary) transition hover:text-[#F38744]"
-                                    >
-                                        {city}
-                                    </p>
-                                )
-                            )}
-                        </div>
+                        <a
+                            href="/terms"
+                            className="transition hover:text-[#F38744]"
+                        >
+                            Terms & Conditions
+                        </a>
+
+                        <a
+                            href="/refund-policy"
+                            className="transition hover:text-[#F38744]"
+                        >
+                            Cancellation Policy
+                        </a>
                     </div>
 
-                    {/* Company */}
-                    <div>
-                        <h4 className="font-semibold text-(--text-primary)">
-                            Company
-                        </h4>
-
-                        <div className="mt-5 space-y-3">
-                            {footerLinks.company.map(
-                                (link) => (
-                                    <p
-                                        key={link}
-                                        className="text-(--text-secondary) transition hover:text-[#F38744]"
-                                    >
-                                        {link}
-                                    </p>
-                                )
-                            )}
-                        </div>
+                    {/* Bottom */}
+                    <div className="mt-12 border-t border-[#F3D4BF]/70 pt-6">
+                        <p className="text-xs tracking-wide text-(--text-muted)">
+                            © 2026 Uniliv. All rights reserved.
+                        </p>
                     </div>
-
-                    {/* Support */}
-                    <div>
-                        <h4 className="font-semibold text-(--text-primary)">
-                            Support
-                        </h4>
-
-                        <div className="mt-5 space-y-3">
-                            {footerLinks.support.map(
-                                (link) => (
-                                    <p
-                                        key={link}
-                                        className="text-(--text-secondary) transition hover:text-[#F38744]"
-                                    >
-                                        {link}
-                                    </p>
-                                )
-                            )}
-                        </div>
-                    </div>
-                </div>
-
-                {/* Bottom */}
-                <div className="mt-14 border-t border-(--border) pt-8">
-                    <p className="text-center text-sm text-(--text-muted)">
-                        © 2026 Uniliv. All rights reserved.
-                    </p>
                 </div>
             </Container>
         </footer>

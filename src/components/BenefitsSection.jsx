@@ -1,53 +1,83 @@
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
-import SectionHeading from "@/components/ui/SectionHeading";
 
 const benefits = [
   {
-    title: "Fully Managed",
+    number: "01",
+    title: "Everything Managed",
     description:
-      "Housekeeping, meals, WiFi and maintenance handled for you.",
+      "Meals, housekeeping, WiFi and maintenance — thoughtfully handled so daily living feels effortless.",
   },
   {
-    title: "₹0 Brokerage",
+    number: "02",
+    title: "Move In Without Stress",
     description:
-      "Move in without paying unnecessary broker fees.",
+      "Fully furnished, move-in ready spaces designed so you can settle in from day one.",
   },
   {
-    title: "Safe Community",
+    number: "03",
+    title: "Comfort You Can Rely On",
     description:
-      "Trusted by students and professionals across cities.",
+      "Safe, professionally managed spaces built for students and working professionals.",
   },
 ];
 
 export default function BenefitsSection() {
   return (
-    <Section className="scroll-mt-28">
+    <Section
+      className="scroll-mt-28 bg-[#FFFDFB] py-20"
+    >
       <Container>
-        <SectionHeading
-          centered
-          eyebrow="Why Choose Us"
-          title="Everything You Need, Already Included"
-          description="Premium co-living designed for comfort, convenience and peace of mind."
-        />
+        <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr]">
+          
+          {/* Left content */}
+          <div>
+            <p className="text-sm font-medium tracking-wide text-[#A96B45]">
+              Why residents choose Uniliv
+            </p>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {benefits.map((benefit) => (
-            <div
-              key={benefit.title}
-              className="rounded-[24] border border-[--border] bg-white p-8 shadow-[0_20px_50px_rgba(0,0,0,0.04)] transition duration-300 hover:-translate-y-1"
-            >
-              <div className="mb-5 h-14 w-14 rounded-[16] bg-[--primary]/10" />
+            <h2 className="mt-4 text-4xl font-semibold leading-tight text-(--text-primary) lg:text-5xl">
+              Designed for
+              Easier Living.
+            </h2>
 
-              <h3 className="text-xl font-semibold text-[--text-primary]">
-                {benefit.title}
-              </h3>
+            <p className="mt-6 max-w-md leading-8 text-(--text-secondary)">
+              More comfort, less daily hassle —
+              thoughtfully managed spaces designed
+              around real everyday living.
+            </p>
+          </div>
 
-              <p className="mt-3 leading-7 text-[--text-secondary]">
-                {benefit.description}
-              </p>
-            </div>
-          ))}
+          {/* Benefits */}
+          <div className="space-y-8">
+            {benefits.map((benefit, index) => (
+              <div
+                key={benefit.title}
+                className={`pb-8 ${
+                  index !== benefits.length - 1
+                    ? "border-b border-[#F3D4BF]"
+                    : ""
+                }`}
+              >
+                <div className="flex gap-5">
+                  
+                  <span className="text-sm font-semibold text-[#F38744]">
+                    {benefit.number}
+                  </span>
+
+                  <div>
+                    <h3 className="text-2xl font-semibold text-(--text-primary)">
+                      {benefit.title}
+                    </h3>
+
+                    <p className="mt-3 max-w-lg leading-8 text-(--text-secondary)">
+                      {benefit.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </Container>
     </Section>

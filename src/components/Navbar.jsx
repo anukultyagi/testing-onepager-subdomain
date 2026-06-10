@@ -68,12 +68,12 @@ export default function Navbar() {
     return (
         <header
             className={`fixed left-0 top-0 z-50 w-full transition-all duration-500 ${isScrolled
-                ? "bg-white shadow-[0_8px_30px_rgba(0,0,0,0.04)] backdrop-blur-xl"
+                ? "bg-white border-b border-[#F3D4BF]/70 bg-white/85 backdrop-blur-xl"
                 : "bg-transparent"
                 }`}
         >
 
-            <div className="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto flex h-[72px] max-w-[1280px] items-center justify-between px-4 sm:px-6 lg:px-8">
 
                 {/* Logo */}
                 <button
@@ -108,29 +108,20 @@ export default function Navbar() {
                 {/* Right */}
                 <div className="flex items-center gap-3">
 
-                    {/* Phone */}
+                    {/* Mobile + Desktop Phone */}
                     <a
-                        href={`tel:${process.env
-                            .NEXT_PUBLIC_SUPPORT_PHONE}`}
-                        className={`hidden rounded-full px-4 py-3 text-sm font-medium transition lg:flex ${isScrolled
-                            ? "border border-(--border) bg-white text-(--text-primary)"
-                            : "border border-white/50 bg-white/20 text-[#A95A25] backdrop-blur-md"
-                            }`}
+                        href={`tel:${process.env.NEXT_PUBLIC_SUPPORT_PHONE}`}
+                        className="rounded-full border border-[#F3D4BF] bg-white px-4 py-2.5 text-sm font-medium text-(--text-primary) transition hover:border-[#F38744]/30"
                     >
-                        📞 +91-{supportPhone}
+                        +91-{supportPhone}
                     </a>
 
-                    {/* CTA */}
+                    {/* Desktop CTA only */}
                     <button
-                        onClick={
-                            scrollToLeadForm
-                        }
-                        className={`rounded-full px-5 py-3 text-sm font-semibold transition duration-300 ${isScrolled
-                            ? "bg-[#F38744] text-white hover:scale-[1.02]"
-                            : "border border-white/50 bg-white/20 text-[#A95A25] backdrop-blur-md"
-                            }`}
+                        onClick={scrollToLeadForm}
+                        className="hidden rounded-full bg-[#F38744] px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-[1px] hover:opacity-95 lg:block"
                     >
-                        Schedule a Visit
+                        Schedule Visit
                     </button>
                 </div>
             </div>

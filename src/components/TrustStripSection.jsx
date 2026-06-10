@@ -1,35 +1,66 @@
+
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 
-const trustedBrands = [
-  "IIT Delhi",
-  "Delhi University",
-  "Infosys",
-  "TCS",
-  "Wipro",
-  "Accenture",
+const trustItems = [
+  {
+    value: "1000+",
+    label: "Residents trusted us",
+  },
+  {
+    value: "24×7",
+    label: "Security & support",
+  },
+  {
+    value: "4.8/5",
+    label: "Resident satisfaction",
+  },
+  {
+    value: "Move-In Ready",
+    label: "No setup hassle",
+  },
 ];
 
 export default function TrustStripSection() {
   return (
-    <Section className="py-12 lg:py-16 scroll-mt-28">
+    <Section
+      className="scroll-mt-28 bg-[#FFD9C2]/40 py-14 lg:py-16"
+    >
       <Container>
-        <div className="rounded-[28] border border-[--border] bg-white/60 px-6 py-10 backdrop-blur-sm">
-          
-          <p className="text-center text-sm font-medium tracking-wide text-[--text-muted] uppercase">
-            Trusted by residents from top universities & companies
+        <div className="mx-auto max-w-6xl text-center">
+
+          {/* Reassurance line */}
+          <p className="text-sm font-medium tracking-wide text-[#A96B45]">
+            Thoughtfully managed for easier living.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-10 gap-y-6 md:gap-x-14">
-            {trustedBrands.map((brand) => (
+          {/* Trust row */}
+          <div className="mt-10 grid gap-y-8 md:grid-cols-4 md:gap-0">
+            {trustItems.map((item, index) => (
               <div
-                key={brand}
-                className="text-sm font-semibold tracking-wide text-neutral-400 transition duration-300 hover:text-neutral-600"
+                key={item.label}
+                className={`px - 6 ${index !== trustItems.length - 1
+                    ? "md:border-r md:border-[#F1D9C9]"
+                    : ""
+                  } `}
               >
-                {brand}
+                <h3 className="text-4xl font-semibold tracking-tight text-(--text-primary)">
+                  {item.value}
+                </h3>
+
+                <p className="mt-2 text-sm leading-6 text-(--text-secondary)">
+                  {item.label}
+                </p>
               </div>
             ))}
           </div>
+
+          {/* Supporting sentence */}
+          <p className="mx-auto mt-10 max-w-3xl text-sm leading-7 text-(--text-secondary)">
+            Meals, housekeeping, comfort and support —
+            thoughtfully managed so you can focus on
+            living, studying and growing.
+          </p>
         </div>
       </Container>
     </Section>
