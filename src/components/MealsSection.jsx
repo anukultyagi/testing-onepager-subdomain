@@ -1,67 +1,49 @@
+import Image from "next/image";
+import { Check } from "lucide-react";
+
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 const mealFeatures = [
   "Breakfast, Lunch & Dinner",
-  "Custom meal preferences",
-  "Healthy & hygienic meals",
-  "Weekend specials",
+  "Healthy & Hygienic Meals",
+  "Weekend Specials",
+  "Custom Meal Preferences",
 ];
 
 export default function MealsSection() {
   return (
-    <Section id="meals-section" className="scroll-mt-28">
+    <Section
+      id="meals-section"
+      background="bg-[#FFF7F2]"
+      className="scroll-mt-28"
+    >
       <Container>
-        <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          
-          {/* LEFT */}
-          <div>
-            <SectionHeading
-              eyebrow="Fresh Meals"
-              title="Fresh, Homely Meals Served Daily."
-              description="Nutritious meals thoughtfully prepared so you can focus on studies, work and life."
-            />
+        <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
 
-            <div className="mt-8 space-y-4">
-              {mealFeatures.map((feature) => (
-                <div
-                  key={feature}
-                  className="flex items-center gap-4"
-                >
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#FFF4ED]">
-                    <div className="h-2.5 w-2.5 rounded-full bg-[#F38744]" />
-                  </div>
-
-                  <p className="text-(--text-secondary)">
-                    {feature}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <button className="mt-8 rounded-[16] border border-[#F38744]/20 bg-[#FFF4ED] px-6 py-4 font-semibold text-[#F38744] transition hover:bg-[#F38744] hover:text-white">
-              View Sample Menu
-            </button>
-          </div>
-
-          {/* RIGHT VISUAL */}
+          {/* LEFT VISUALS */}
           <div className="relative">
-            
-            {/* Main image card */}
-            <div className="overflow-hidden rounded-[40] border border-(--border) bg-white shadow-[0_20px_50px_rgba(0,0,0,0.06)]">
-              
-              <div className="h-[500] bg-linear-to-br from-[#FFE7D7] via-[#FFF2EA] to-[#FFD8C1]" />
+
+            {/* Main image */}
+            <div className="overflow-hidden rounded-[32px] border border-[#F3D4BF] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.06)]">
+              <div className="relative h-[520px]">
+                <Image
+                  src="https://images.unsplash.com/photo-1544025162-d76694265947?w=1200&q=80"
+                  alt="Fresh meals"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
 
-            {/* Floating glass card */}
-            <div className="absolute bottom-6 left-6 rounded-[24] border border-white/60 bg-white/75 p-5 shadow-[0_20px_50px_rgba(0,0,0,0.08)] backdrop-blur-xl">
-              
-              <p className="text-xs font-medium uppercase tracking-wide text-(--text-muted)">
+            {/* Today's special */}
+            <div className="absolute bottom-6 left-6 rounded-[28px] border border-white/60 bg-white/90 p-5 shadow-[0_20px_40px_rgba(0,0,0,0.08)] backdrop-blur-xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#A66B48]">
                 Today’s Special
               </p>
 
-              <h4 className="mt-2 text-lg font-semibold text-(--text-primary)">
+              <h4 className="mt-2 text-xl font-semibold text-(--text-primary)">
                 Paneer Tikka Meal
               </h4>
 
@@ -69,6 +51,55 @@ export default function MealsSection() {
                 Fresh rotis, rice, dal & salad
               </p>
             </div>
+
+            {/* Floating trust card */}
+            <div className="absolute -right-5 top-8 rounded-[24px] border border-[#F3D4BF] bg-white p-5 shadow-[0_20px_40px_rgba(0,0,0,0.06)]">
+              <p className="text-sm font-medium text-(--text-secondary)">
+                Fresh meals served
+              </p>
+
+              <h4 className="mt-1 text-3xl font-bold text-(--text-primary)">
+                Daily
+              </h4>
+            </div>
+          </div>
+
+          {/* RIGHT CONTENT */}
+          <div>
+            <SectionHeading
+              eyebrow="Fresh Meals"
+              title="Fresh, Homely Meals Served Daily."
+              description="Focus on work, studies and life — we’ll take care of the meals. Thoughtfully prepared food designed for comfort, convenience and healthy everyday living."
+            />
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {mealFeatures.map((feature) => (
+                <div
+                  key={feature}
+                  className="flex items-start gap-3 rounded-[22px] border border-[#F3D4BF] bg-white p-4 shadow-[0_10px_30px_rgba(0,0,0,0.03)]"
+                >
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#FFF4ED]">
+                    <Check
+                      size={18}
+                      className="text-[#F38744]"
+                    />
+                  </div>
+
+                  <p className="font-medium text-(--text-primary)">
+                    {feature}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-8 text-sm leading-7 text-(--text-secondary)">
+              Meal plans may vary by property, with select locations offering
+              included or optional food services.
+            </p>
+
+            <button className="mt-8 rounded-[18px] bg-[#F38744] px-7 py-4 font-semibold text-white transition duration-300 hover:-translate-y-[2px] hover:opacity-90">
+              View Sample Menu
+            </button>
           </div>
         </div>
       </Container>
