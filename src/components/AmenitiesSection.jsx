@@ -62,7 +62,7 @@ export default function AmenitiesSection() {
           <div className="grid gap-5 md:grid-cols-2">
 
             {/* Featured card */}
-            <div className="group relative overflow-hidden rounded-[32px] border border-[#F3D4BF] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.06)] md:row-span-2">
+            <div className="group relative overflow-hidden rounded-[32px] border border-(--border)  bg-white shadow-[0_20px_50px_rgba(0,0,0,0.06)] md:row-span-2">
               <div className="relative h-[420px]">
                 <Image
                   src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85"
@@ -93,7 +93,7 @@ export default function AmenitiesSection() {
             {amenities.map((item) => (
               <div
                 key={item.title}
-                className="group overflow-hidden rounded-[28px] border border-[#F3D4BF] bg-white shadow-[0_15px_40px_rgba(0,0,0,0.04)] transition duration-300 hover:-translate-y-1"
+                className="group overflow-hidden rounded-[28px] border border-(--border)  bg-white shadow-[0_15px_40px_rgba(0,0,0,0.04)] transition duration-300 hover:-translate-y-1"
               >
                 <div className="relative h-[180px] overflow-hidden">
                   <Image

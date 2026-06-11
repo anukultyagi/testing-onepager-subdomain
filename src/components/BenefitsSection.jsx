@@ -29,7 +29,7 @@ export default function BenefitsSection() {
     >
       <Container>
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr]">
-          
+
           {/* Left content */}
           <div>
             <p className="text-sm font-medium tracking-wide text-[#A96B45]">
@@ -53,14 +53,13 @@ export default function BenefitsSection() {
             {benefits.map((benefit, index) => (
               <div
                 key={benefit.title}
-                className={`pb-8 ${
-                  index !== benefits.length - 1
-                    ? "border-b border-[#F3D4BF]"
+                className={`pb-8 ${index !== benefits.length - 1
+                    ? "border-b border-(--border) "
                     : ""
-                }`}
+                  }`}
               >
                 <div className="flex gap-5">
-                  
+
                   <span className="text-sm font-semibold text-[#F38744]">
                     {benefit.number}
                   </span>

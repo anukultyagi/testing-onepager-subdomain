@@ -64,7 +64,7 @@ export default function RoomsSection() {
                     {rooms.map((room) => (
                         <div
                             key={room.title}
-                            className="group overflow-hidden rounded-2xl border border-[#F3D4BF] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.05)] transition duration-300 hover:-translate-y-[4px]"
+                            className="group overflow-hidden rounded-2xl border border-(--border)  bg-white shadow-[0_20px_50px_rgba(0,0,0,0.05)] transition duration-300 hover:-translate-y-[4px]"
                         >
                             {/* Room image */}
                             <div className="relative h-[240px] overflow-hidden">
@@ -119,7 +119,7 @@ export default function RoomsSection() {
                                         </span>
                                     ))}
                                 </div> */}
-                                <div className="mt-5 border-t border-[#F3D4BF] pt-4">
+                                <div className="mt-5 border-t border-(--border)  pt-4">
                                     <p className="text-sm text-(--text-secondary)">
                                         Starting from
                                     </p>

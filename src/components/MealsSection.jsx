@@ -26,7 +26,7 @@ export default function MealsSection() {
           <div className="relative">
 
             {/* Main image */}
-            <div className="overflow-hidden rounded-[32px] border border-[#F3D4BF] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.06)]">
+            <div className="overflow-hidden rounded-[32px] border border-(--border)  bg-white shadow-[0_20px_50px_rgba(0,0,0,0.06)]">
               <div className="relative h-[520px]">
                 <Image
                   src="https://images.unsplash.com/photo-1544025162-d76694265947?w=1200&q=80"
@@ -53,7 +53,7 @@ export default function MealsSection() {
             </div>
 
             {/* Floating trust card */}
-            <div className="absolute -right-5 top-8 rounded-[24px] border border-[#F3D4BF] bg-white p-5 shadow-[0_20px_40px_rgba(0,0,0,0.06)]">
+            <div className="absolute -right-5 top-8 rounded-[24px] border border-(--border)  bg-white p-5 shadow-[0_20px_40px_rgba(0,0,0,0.06)]">
               <p className="text-sm font-medium text-(--text-secondary)">
                 Fresh meals served
               </p>
@@ -76,7 +76,7 @@ export default function MealsSection() {
               {mealFeatures.map((feature) => (
                 <div
                   key={feature}
-                  className="flex items-start gap-3 rounded-[22px] border border-[#F3D4BF] bg-white p-4 shadow-[0_10px_30px_rgba(0,0,0,0.03)]"
+                  className="flex items-start gap-3 rounded-[22px] border border-(--border)  bg-white p-4 shadow-[0_10px_30px_rgba(0,0,0,0.03)]"
                 >
                   <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#FFF4ED]">
                     <Check
@@ -97,7 +97,7 @@ export default function MealsSection() {
               included or optional food services.
             </p>
 
-            <button className="mt-8 rounded-[18px] bg-[#F38744] px-7 py-4 font-semibold text-white transition duration-300 hover:-translate-y-[2px] hover:opacity-90">
+            <button className="mt-8 rounded-md bg-[#F38744] px-7 py-4 font-semibold text-white transition duration-300 hover:-translate-y-[2px] hover:opacity-90">
               View Sample Menu
             </button>
           </div>

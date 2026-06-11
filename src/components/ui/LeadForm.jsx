@@ -88,7 +88,7 @@ export default function LeadForm() {
       if (!response.ok) {
         throw new Error(
           data.message ||
-            "Failed to submit"
+          "Failed to submit"
         );
       }
 
@@ -102,7 +102,7 @@ export default function LeadForm() {
 
       setErrorMessage(
         error.message ||
-          "Something went wrong"
+        "Something went wrong"
       );
     } finally {
       setIsSubmitting(false);
@@ -185,12 +185,11 @@ export default function LeadForm() {
                   })
                 )
               }
-              className={`rounded-2xl border px-4 py-4 text-sm font-medium transition disabled:cursor-not-allowed ${
-                formData.userType ===
-                type
+              className={`rounded-2xl border px-4 py-4 text-sm font-medium transition disabled:cursor-not-allowed ${formData.userType ===
+                  type
                   ? "border-[#F38744] bg-[#FFF4ED] text-[#F38744]"
                   : "border-(--border) bg-white text-(--text-secondary) hover:border-[#F38744]/30"
-              }`}
+                }`}
             >
               {type}
             </button>
@@ -251,7 +250,7 @@ export default function LeadForm() {
         disabled={
           isSubmitting
         }
-        className="flex h-14 w-full items-center justify-center rounded-[18px] bg-[#F38744] text-base font-semibold text-white transition hover:scale-[1.01] hover:opacity-95 disabled:cursor-not-allowed disabled:opacity-70"
+        className="flex h-14 w-full items-center justify-center rounded-md bg-[#F38744] text-base font-semibold text-white transition hover:scale-[1.01] hover:opacity-95 disabled:cursor-not-allowed disabled:opacity-70"
       >
         {isSubmitting ? (
           <span>

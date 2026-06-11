@@ -57,7 +57,7 @@ export default function ThankYouPage() {
 
             <a
               href={`tel:${process.env.NEXT_PUBLIC_SUPPORT_PHONE}`}
-              className="rounded-[18px] bg-[#F38744] px-8 py-4 text-center font-semibold text-white transition hover:scale-[1.01] hover:opacity-95"
+              className="rounded-md bg-[#F38744] px-8 py-4 text-center font-semibold text-white transition hover:scale-[1.01] hover:opacity-95"
             >
               Call Support
             </a>

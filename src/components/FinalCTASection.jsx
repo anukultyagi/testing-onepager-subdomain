@@ -20,7 +20,7 @@ export default function FinalCTASection() {
     return (
         <Section className="scroll-mt-28 py-16 lg:py-24">
             <Container>
-                <div className="overflow-hidden rounded-[32px] border border-[#F3D4BF] bg-[#FFF7F2]">
+                <div className="overflow-hidden rounded-[32px] border border-(--border)  bg-[#FFF7F2]">
 
                     {/* Lifestyle image */}
                     <div className="relative h-[260px] overflow-hidden md:h-[340px]">
@@ -75,10 +75,10 @@ export default function FinalCTASection() {
                             </button>
 
                             <a
-                                href="https://wa.me/919999999999"
+                                href="https://wa.me/919220103600"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center justify-center gap-2 rounded-full border border-[#F3D4BF] bg-white px-8 py-4 font-semibold text-(--text-primary) transition duration-300 hover:-translate-y-[2px]"
+                                className="inline-flex items-center justify-center gap-2 rounded-full border border-(--border)  bg-white px-8 py-4 font-semibold text-(--text-primary) transition duration-300 hover:-translate-y-[2px]"
                             >
                                 <MessageCircleMore size={18} />
 

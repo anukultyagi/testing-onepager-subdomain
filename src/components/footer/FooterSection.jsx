@@ -4,6 +4,11 @@ import {
     MapPin,
     Phone,
 } from "lucide-react";
+import Image from "next/image";
+
+const logoWidth = 300;
+const logoHeight = 100;
+
 
 export default function FooterSection() {
     return (
@@ -17,9 +22,14 @@ export default function FooterSection() {
 
                     {/* Brand */}
                     <div className="mx-auto max-w-xl">
-                        <h3 className="text-3xl font-semibold tracking-tight text-(--text-primary)">
-                            Uniliv
-                        </h3>
+                        <div className="flex justify-center items-center">
+                            <Image
+                                src="/unilivLogo.svg"
+                                className="object-contain"
+                                width={logoWidth}
+                                height={logoHeight}
+                                alt="uniliv logo" />
+                        </div>
 
                         <p className="mt-4 text-lg text-(--text-secondary)">
                             Premium co-living for students &
@@ -35,11 +45,11 @@ export default function FooterSection() {
                     <div className="mt-10 flex flex-col items-center justify-center gap-5 text-sm text-(--text-secondary) sm:flex-row sm:flex-wrap sm:gap-8">
 
                         <a
-                            href="tel:+919999999999"
+                            href="tel:+919220103600"
                             className="inline-flex items-center gap-2 transition hover:text-[#F38744]"
                         >
                             <Phone size={16} strokeWidth={1.8} />
-                            +91 99999 99999
+                            +91 9717610062
                         </a>
 
                         <a
@@ -47,7 +57,7 @@ export default function FooterSection() {
                             className="inline-flex items-center gap-2 transition hover:text-[#F38744]"
                         >
                             <Mail size={16} strokeWidth={1.8} />
-                            hello@uniliv.com
+                            info@uniliv.in
                         </a>
 
                         <div className="inline-flex items-center gap-2">
@@ -81,9 +91,9 @@ export default function FooterSection() {
                     </div>
 
                     {/* Bottom */}
-                    <div className="mt-12 border-t border-[#F3D4BF]/70 pt-6">
+                    <div className="mt-12 border-t border-(--border) /70 pt-6">
                         <p className="text-xs tracking-wide text-(--text-muted)">
-                            © 2026 Uniliv. All rights reserved.
+                            © 2026 UniLiv. All rights reserved.
                         </p>
                     </div>
                 </div>

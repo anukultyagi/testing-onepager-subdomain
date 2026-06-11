@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import scrollToLeadForm from "@/lib/scrollToLeadForm";
+import Image from "next/image";
 
 
 const navLinks = [
@@ -65,10 +66,13 @@ export default function Navbar() {
             );
     }, []);
 
+    const logoWidth = 120;
+    const logoHeight = 40;
+
     return (
         <header
             className={`fixed left-0 top-0 z-50 w-full transition-all duration-500 ${isScrolled
-                ? "bg-white border-b border-[#F3D4BF]/70 bg-white/85 backdrop-blur-xl"
+                ? "bg-white border-b border-(--border) /70 bg-white/85 backdrop-blur-xl"
                 : "bg-transparent"
                 }`}
         >
@@ -85,7 +89,12 @@ export default function Navbar() {
                     }
                     className="text-2xl font-bold tracking-tight text-(--text-primary)"
                 >
-                    Uniliv
+                    <Image
+                        src="/unilivLogo.svg"
+                        className="object-contain"
+                        width={logoWidth}
+                        height={logoHeight}
+                        alt="uniliv logo" />
                 </button>
 
                 {/* Desktop nav */}
@@ -111,7 +120,7 @@ export default function Navbar() {
                     {/* Mobile + Desktop Phone */}
                     <a
                         href={`tel:${process.env.NEXT_PUBLIC_SUPPORT_PHONE}`}
-                        className="rounded-full border border-[#F3D4BF] bg-white px-4 py-2.5 text-sm font-medium text-(--text-primary) transition hover:border-[#F38744]/30"
+                        className="rounded-full border border-(--border)  bg-white px-4 py-2.5 text-sm font-medium text-(--text-primary) transition hover:border-[#F38744]/30"
                     >
                         +91-{supportPhone}
                     </a>

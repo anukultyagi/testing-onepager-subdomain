@@ -77,7 +77,7 @@ export default function TestimonialsSection() {
         <div className="mt-16 grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
 
           {/* Featured story */}
-          <div className="overflow-hidden rounded-2xl border border-[#F3D4BF] bg-[#FFF7F2] transition duration-300 hover:-translate-y-[2px]">
+          <div className="overflow-hidden rounded-2xl border border-(--border)  bg-[#FFF7F2] transition duration-300 hover:-translate-y-[2px]">
 
             <div className="relative h-[340px]">
               <Image
@@ -134,7 +134,7 @@ export default function TestimonialsSection() {
             {supportingReviews.map((testimonial) => (
               <div
                 key={testimonial.name}
-                className="rounded-2xl border border-[#F3D4BF] bg-white p-6 transition duration-300 hover:-translate-y-[2px]"
+                className="rounded-2xl border border-(--border)  bg-white p-6 transition duration-300 hover:-translate-y-[2px]"
               >
                 <p className="leading-8 text-(--text-primary)">
                   “{testimonial.review}”

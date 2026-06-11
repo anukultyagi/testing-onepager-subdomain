@@ -157,7 +157,7 @@ export default function HeroSection() {
           >
             {/* Decorative card behind */}
 
-            <div className="relative rounded-[32] border border-white/70 bg-white/75 shadow-[0_20px_60px_rgba(0,0,0,0.08)] p-7 backdrop-blur-xl md:p-8">
+            <div className="relative rounded-2xl border border-white/70 bg-white/75 shadow-[0_20px_60px_rgba(0,0,0,0.08)] p-7 backdrop-blur-xl md:p-8">
 
               <div className="mb-7">
                 <h2 className="text-2xl font-semibold text-[#D46A2C]">
