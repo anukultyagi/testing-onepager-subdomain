@@ -5,7 +5,7 @@ import Section from "@/components/ui/Section";
 const trustItems = [
   {
     value: "1000+",
-    label: "Residents trusted us",
+    label: "Residents have stayed with Uniliv",
   },
   {
     value: "24×7",

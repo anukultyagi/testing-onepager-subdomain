@@ -3,13 +3,17 @@ export default function Section({
   className = "",
   background = "",
   id = "",
+  compact = false,
 }) {
   return (
     <section
       id={id}
       className={`
-        py-24
-        lg:py-32
+        ${
+          compact
+            ? "py-12 lg:py-16"
+            : "py-20 lg:py-28"
+        }
         ${background}
         ${className}
       `}

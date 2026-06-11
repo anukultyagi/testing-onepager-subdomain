@@ -6,10 +6,11 @@ import { generateLead } from "@/lib/metaPixel";
 
 const cities = [
   "Noida",
-  "Delhi",
+  "Greater Noida",
+  "Delhi NCR",
   "Gurugram",
   "Bangalore",
-  "Hyderabad",
+  "Dehradun",
 ];
 
 export default function LeadForm() {
@@ -129,13 +130,13 @@ export default function LeadForm() {
           }
           disabled={isSubmitting}
           required
-          className="h-14 w-full rounded-2xl border border-(--border) bg-white px-5 outline-none transition focus:border-[#F38744] disabled:cursor-not-allowed disabled:bg-gray-100"
+          className="h-14 w-full rounded-md border border-[#F3D4BF] bg-white px-5 text-(--text-primary) outline-none transition focus:border-[#F38744] focus:ring-4 focus:ring-[#F38744]/10 disabled:cursor-not-allowed disabled:bg-[#FAFAFA]"
         />
       </div>
 
       {/* Phone */}
-      <div className="flex overflow-hidden rounded-2xl border border-(--border) focus-within:border-[#F38744]">
-        <div className="flex items-center border-r border-(--border) bg-[#FFF4ED] px-4 font-medium text-(--text-primary)">
+      <div className="flex overflow-hidden rounded-md border border-[#F3D4BF] transition focus-within:border-[#F38744] focus-within:ring-4 focus-within:ring-[#F38744]/10">
+        <div className="flex items-center border-r border-[#F3D4BF] bg-[#FFF4ED] px-4 font-medium text-(--text-primary)">
           +91
         </div>
 
@@ -153,7 +154,7 @@ export default function LeadForm() {
           disabled={isSubmitting}
           required
           maxLength={10}
-          className="h-14 w-full px-5 outline-none disabled:cursor-not-allowed disabled:bg-gray-100"
+          className="h-14 w-full bg-white px-5 text-(--text-primary) outline-none disabled:cursor-not-allowed disabled:bg-[#FAFAFA]"
         />
       </div>
 
@@ -185,10 +186,10 @@ export default function LeadForm() {
                   })
                 )
               }
-              className={`rounded-2xl border px-4 py-4 text-sm font-medium transition disabled:cursor-not-allowed ${formData.userType ===
-                  type
-                  ? "border-[#F38744] bg-[#FFF4ED] text-[#F38744]"
-                  : "border-(--border) bg-white text-(--text-secondary) hover:border-[#F38744]/30"
+              className={`h-14 rounded-md border px-4 text-sm font-medium transition disabled:cursor-not-allowed ${formData.userType ===
+                type
+                ? "border-[#F38744] bg-[#FFF4ED] text-[#C96A2B]"
+                : "border-(--border) bg-white text-(--text-secondary) hover:border-[#F38744]/30"
                 }`}
             >
               {type}
@@ -206,7 +207,7 @@ export default function LeadForm() {
         }
         disabled={isSubmitting}
         required
-        className="h-14 w-full rounded-2xl border border-(--border) bg-white px-5 outline-none transition focus:border-[#F38744] disabled:cursor-not-allowed disabled:bg-gray-100"
+        className="h-14 w-full rounded-md border border-[#F3D4BF] bg-white px-5 text-(--text-primary) outline-none transition focus:border-[#F38744] focus:ring-4 focus:ring-[#F38744]/10 disabled:cursor-not-allowed disabled:bg-[#FAFAFA]"
       >
         <option value="">
           Select Preferred City
@@ -239,10 +240,11 @@ export default function LeadForm() {
 
       {/* Error Message */}
       {errorMessage && (
-        <p className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-600">
+        <p className="rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
           {errorMessage}
         </p>
-      )}
+      )
+      }
 
       {/* CTA */}
       <button
@@ -250,7 +252,7 @@ export default function LeadForm() {
         disabled={
           isSubmitting
         }
-        className="flex h-14 w-full items-center justify-center rounded-md bg-[#F38744] text-base font-semibold text-white transition hover:scale-[1.01] hover:opacity-95 disabled:cursor-not-allowed disabled:opacity-70"
+        className="flex h-14 w-full items-center justify-center rounded-md bg-[#F38744] text-base font-semibold text-white transition duration-300 hover:-translate-y-[2px] hover:opacity-95 disabled:cursor-not-allowed disabled:opacity-70"
       >
         {isSubmitting ? (
           <span>
@@ -265,6 +267,6 @@ export default function LeadForm() {
       <p className="text-center text-xs text-(--text-muted)">
         🔒 Your data is secure
       </p>
-    </form>
+    </form >
   );
 }

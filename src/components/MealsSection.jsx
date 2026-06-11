@@ -22,61 +22,54 @@ export default function MealsSection() {
       <Container>
         <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
 
-          {/* LEFT VISUALS */}
+          {/* LEFT VISUAL */}
           <div className="relative">
 
             {/* Main image */}
-            <div className="overflow-hidden rounded-[32px] border border-(--border)  bg-white shadow-[0_20px_50px_rgba(0,0,0,0.06)]">
-              <div className="relative h-[520px]">
+            <div className="overflow-hidden rounded-2xl border border-[#F3D4BF] bg-white shadow-[0_12px_30px_rgba(0,0,0,0.04)]">
+              <div className="relative h-[320px] sm:h-[420px] lg:h-[520px]">
                 <Image
                   src="https://images.unsplash.com/photo-1544025162-d76694265947?w=1200&q=80"
-                  alt="Fresh meals"
+                  alt="Fresh meals at Uniliv"
                   fill
                   className="object-cover"
                 />
               </div>
             </div>
 
-            {/* Today's special */}
-            <div className="absolute bottom-6 left-6 rounded-[28px] border border-white/60 bg-white/90 p-5 shadow-[0_20px_40px_rgba(0,0,0,0.08)] backdrop-blur-xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#A66B48]">
-                Today’s Special
+            {/* Meal card */}
+            <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto rounded-2xl border border-[#F3D4BF] bg-white/95 p-4 shadow-[0_12px_30px_rgba(0,0,0,0.04)] backdrop-blur-sm sm:max-w-[280px]">
+
+              <p className="text-xs font-medium tracking-wide text-[#A96B45]">
+                Freshly Prepared Meals
               </p>
 
-              <h4 className="mt-2 text-xl font-semibold text-(--text-primary)">
-                Paneer Tikka Meal
+              <h4 className="mt-2 text-lg font-semibold leading-tight text-(--text-primary)">
+                Comforting, homely food
+                designed for everyday living.
               </h4>
 
-              <p className="mt-1 text-sm text-(--text-secondary)">
-                Fresh rotis, rice, dal & salad
+              <p className="mt-2 text-sm leading-6 text-(--text-secondary)">
+                Fresh meals prepared to make
+                daily life simpler and stress-free.
               </p>
-            </div>
-
-            {/* Floating trust card */}
-            <div className="absolute -right-5 top-8 rounded-[24px] border border-(--border)  bg-white p-5 shadow-[0_20px_40px_rgba(0,0,0,0.06)]">
-              <p className="text-sm font-medium text-(--text-secondary)">
-                Fresh meals served
-              </p>
-
-              <h4 className="mt-1 text-3xl font-bold text-(--text-primary)">
-                Daily
-              </h4>
             </div>
           </div>
 
           {/* RIGHT CONTENT */}
           <div>
             <SectionHeading
-              eyebrow="Fresh Meals"
-              title="Fresh, Homely Meals Served Daily."
-              description="Focus on work, studies and life — we’ll take care of the meals. Thoughtfully prepared food designed for comfort, convenience and healthy everyday living."
+              eyebrow="Meals & Dining"
+              title="Fresh, Homely Meals For Easier Living."
+              description="Focus on work, studies and everyday life while we take care of the meals — thoughtfully prepared for comfort and convenience."
             />
 
+            {/* Features */}
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {mealFeatures.map((feature) => (
                 <div
                   key={feature}
-                  className="flex items-start gap-3 rounded-[22px] border border-(--border)  bg-white p-4 shadow-[0_10px_30px_rgba(0,0,0,0.03)]"
+                  className="flex items-start gap-3 rounded-2xl border border-[#F3D4BF] bg-white p-4 shadow-[0_12px_30px_rgba(0,0,0,0.04)]"
                 >
                   <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#FFF4ED]">
                     <Check
@@ -92,14 +85,22 @@ export default function MealsSection() {
               ))}
             </div>
 
+            {/* Disclaimer */}
             <p className="mt-8 text-sm leading-7 text-(--text-secondary)">
-              Meal plans may vary by property, with select locations offering
+              Meal plans may vary by property,
+              with select locations offering
               included or optional food services.
             </p>
 
-            <button className="mt-8 rounded-md bg-[#F38744] px-7 py-4 font-semibold text-white transition duration-300 hover:-translate-y-[2px] hover:opacity-90">
+            {/* CTA */}
+            <a
+              href="/sample-menu.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex h-12 items-center justify-center rounded-md bg-[#F38744] px-6 font-semibold text-white transition duration-300 hover:-translate-y-[2px] hover:opacity-90"
+            >
               View Sample Menu
-            </button>
+            </a>
           </div>
         </div>
       </Container>
