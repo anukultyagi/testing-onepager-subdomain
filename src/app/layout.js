@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import MobileStickyCTA from "@/components/MobileStickyCTA";
 import Script from "next/script";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -73,6 +74,7 @@ export default function RootLayout({ children }) {
         {/* <Navbar /> */}
         {children}
         <MobileStickyCTA />
+        <GoogleAnalytics gaId="G-GVR1RYVJCS" />
 
         <Script id="meta-pixel" strategy="afterInteractive">
           {`
