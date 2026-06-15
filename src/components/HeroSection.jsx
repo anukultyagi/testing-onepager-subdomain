@@ -4,23 +4,34 @@ import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
 import LeadForm from "@/components/ui/LeadForm";
 import Navbar from "./Navbar";
+import {
+  ShieldCheck,
+  UtensilsCrossed,
+  Wifi,
+  IndianRupee,
+} from "lucide-react";
+
 
 const stats = [
   {
-    value: "🏠",
+    icon: ShieldCheck,
     label: "Fully Managed",
+    color: "text-[#D46A2C]",
   },
   {
-    value: "🍽",
+    icon: UtensilsCrossed,
     label: "Daily Meals",
+    color: "text-[#D46A2C]",
   },
   {
-    value: "📶",
-    label: "Fast WiFi",
+    icon: Wifi,
+    label: "Wi-Fi Included",
+    color: "text-[#D46A2C]",
   },
   {
-    value: "₹0",
-    label: "Brokerage",
+    icon: IndianRupee,
+    label: "Zero Brokerage",
+    color: "text-[#D46A2C]",
   },
 ];
 
@@ -29,12 +40,12 @@ const fadeUp = {
     opacity: 0,
     y: 20,
   },
-  visible: (delay = 0) => ({
+  visible: (customDelay = 0) => ({
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.6,
-      delay,
+      delay: customDelay,
       ease: "easeOut",
     },
   }),
@@ -48,11 +59,11 @@ export default function HeroSection() {
 
         {/* Ambient Background */}
         {/* Warm ambient glow */}
-        <div className="absolute left-[-120] top-[-120] h-[420px] w-[420px] rounded-full bg-[#F38744]/12 blur-[120]" />
+        <div className="absolute left-[-120px] top-[-120px] h-[420px] w-[420px] rounded-full bg-[#F38744]/12 blur-[120]" />
 
-        <div className="absolute right-[-120] top-[20%] h-[360px] w-[360px] rounded-full bg-orange-100 blur-[110]" />
+        <div className="absolute right-[-120px] top-[20%] h-[360px] w-[360px] rounded-full bg-orange-100 blur-[110]" />
 
-        <div className="absolute bottom-[-180] left-[30%] h-[280px] w-[280px] rounded-full bg-[#FFD9C2]/40 blur-[120]" />
+        <div className="absolute bottom-[-180px] left-[30%] h-[280px] w-[280px] rounded-full bg-[#FFD9C2]/40 blur-[120]" />
 
         <Container className="relative z-10 pt-28 pb-14 md:pt-32 md:pb-20 lg:pt-36 lg:pb-28">
           <div className="grid items-center gap-14 lg:grid-cols-[1.15fr_0.85fr]">
@@ -76,13 +87,12 @@ export default function HeroSection() {
               <motion.h1
                 variants={fadeUp}
                 custom={0.1}
-                className="text-[44px] font-bold leading-[1.04] text-black sm:text-[56px] lg:text-5xl lg:leading-[1.02]"
+                className="text-[44px] font-bold leading-tight text-black sm:text-[56px] lg:text-[64px] lg:leading-snug"
               >
-                Professionally Managed {" "}
-                <br />
-                Living Spaces
+                Professionally Managed Spaces {" "}
+
                 <span className="text-[#F38744] sm:text-[56px] lg:text-7xl">
-                  That Actually Feels Comfortable
+                  That Actually Feel Comfortable
                 </span>
               </motion.h1>
 
@@ -102,22 +112,25 @@ export default function HeroSection() {
                 custom={0.3}
                 className="mt-10 flex flex-wrap gap-4"
               >
-                {stats.map((stat) => (
-                  <div
-                    key={stat.label}
-                    className="rounded-full border border-white/80 bg-white/75 px-5 py-4 shadow-[0_10px_30px_rgba(0,0,0,0.06)] backdrop-blur-md"
-                  >
-                    <div className="flex items-center gap-2">
-                      <span className="text-lg font-bold text-[#D46A2C]">
-                        {stat.value}
-                      </span>
+                {stats.map((stat) => {
+                  const IconComponent = stat.icon;
 
-                      <span className="text-sm text-neutral-500">
+                  return (
+                    <div
+                      key={stat.label}
+                      className="flex items-center gap-3 rounded-full border border-[#F3D4BF]/40 bg-white/80 sm:px-5 px-4 sm:py-4 py-2 shadow-[0_10px_30px_rgba(0,0,0,0.06)] backdrop-blur-md"
+                    >
+                      <IconComponent
+                        className={`h-5 w-5 shrink-0 ${stat.color}`}
+                        strokeWidth={2.5} />
+
+                      <span className="text-sm font-medium text-neutral-600">
                         {stat.label}
                       </span>
                     </div>
-                  </div>
-                ))}
+                  )
+                })}
+
               </motion.div>
 
               {/* Trust */}
@@ -164,7 +177,7 @@ export default function HeroSection() {
 
                 <div className="mb-7">
                   <h2 className="text-2xl font-semibold text-[#D46A2C]">
-                    Find Your Ideal Space
+                    Find Your Ideal PG / Hostel
                   </h2>
 
                   <p className="mt-2 text-sm text-neutral-500">

@@ -6,7 +6,7 @@ import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 const mealFeatures = [
-  "Breakfast, Lunch & Dinner",
+  "Breakfast, Lunch, Evening Snacks & Dinner",
   "Healthy & Hygienic Meals",
   "Weekend Specials",
   "Custom Meal Preferences",

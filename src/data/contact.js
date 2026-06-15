@@ -12,5 +12,6 @@ export const CONTACT = {
     "Bangalore",
     "Dehradun",
     "Gurugram",
+    "Jaipur",
   ],
 };
