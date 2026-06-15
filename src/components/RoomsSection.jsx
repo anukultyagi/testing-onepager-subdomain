@@ -12,6 +12,9 @@ import {
     MessageCircleMore,
 } from "lucide-react";
 
+
+
+
 const rooms = [
     {
         title: "Private Room",
@@ -20,8 +23,7 @@ const rooms = [
         price: "₹18,999/mo",
         badge: "Most Preferred",
         badgeType: "orange",
-        image:
-            "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200&q=80",
+        image: "/assets/uniliv-campaign-single-room-thumbnail.webp",
     },
     {
         title: "Double Sharing",
@@ -30,8 +32,7 @@ const rooms = [
         price: "₹12,499/mo",
         badge: "Filling Fast",
         badgeType: "green",
-        image:
-            "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=80",
+        image: "/assets/uniliv-campaign-double-room-thumbnail.webp"
     },
     {
         title: "Triple Sharing",
@@ -40,8 +41,7 @@ const rooms = [
         price: "₹9,999/mo",
         badge: "Best Value",
         badgeType: "orange",
-        image:
-            "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200&q=80",
+        image: "/assets/uniliv-campaign-triple-room-thumbnail.webp",
     },
 ];
 

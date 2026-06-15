@@ -18,24 +18,21 @@ const testimonials = [
   {
     name: "Priya Gupta",
     role: "MBA Student",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&q=80",
+
     review:
       "The environment feels safe, welcoming and genuinely comfortable. Everything feels professionally managed.",
   },
   {
     name: "Aman Verma",
     role: "Product Designer",
-    image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&q=80",
+
     review:
       "Fully furnished spaces and zero brokerage made relocating much less stressful.",
   },
   {
     name: "Sneha Kapoor",
     role: "Marketing Professional",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&q=80",
+
     review:
       "Meals and housekeeping honestly removed a lot of everyday hassle.",
   },
@@ -89,14 +86,14 @@ export default function TestimonialsSection() {
               <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 
                 <div className="flex items-center gap-4">
-                  <div className="relative h-14 w-14 overflow-hidden rounded-full">
+                  {/* <div className="relative h-14 w-14 overflow-hidden rounded-full">
                     <Image
                       src={featuredReview.image}
                       alt={featuredReview.name}
                       fill
                       className="object-cover"
                     />
-                  </div>
+                  </div> */}
 
                   <div>
                     <h4 className="font-semibold text-(--text-primary)">
@@ -138,14 +135,14 @@ export default function TestimonialsSection() {
                   <div className="mt-6 flex items-center justify-between">
 
                     <div className="flex items-center gap-3">
-                      <div className="relative h-12 w-12 overflow-hidden rounded-full">
+                      {/* <div className="relative h-12 w-12 overflow-hidden rounded-full">
                         <Image
                           src={testimonial.image}
                           alt={testimonial.name}
                           fill
                           className="object-cover"
                         />
-                      </div>
+                      </div> */}
 
                       <div>
                         <h4 className="font-medium text-(--text-primary)">

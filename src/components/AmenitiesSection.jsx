@@ -27,7 +27,7 @@ const amenities = [
       "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=80",
   },
   {
-    title: "Thoughtfully Designed Spaces",
+    title: "Professional Laundary",
     description:
       "Comfortable spaces designed to make everyday living feel easier.",
     image:
@@ -62,7 +62,7 @@ export default function AmenitiesSection() {
 
               <div className="relative h-[320px] sm:h-[380px] lg:h-[420px]">
                 <Image
-                  src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85"
+                  src="/assets/uniliv-campaign-featured-amenity-thumbnail.webp"
                   alt="Comfortable managed living"
                   fill
                   className="object-cover transition duration-700 group-hover:scale-105"
