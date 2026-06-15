@@ -66,11 +66,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed left-0 top-0 z-50 w-full transition-all duration-300 ${
-        isScrolled
-          ? "border-b border-[#F3D4BF] bg-white/90 backdrop-blur-md"
-          : "bg-transparent"
-      }`}
+      className={`fixed left-0 top-0 z-50 w-full transition-all duration-300 ${isScrolled
+        ? "border-b border-[#F3D4BF] bg-white/90 backdrop-blur-md"
+        : "border-b border-transparent bg-transparent"
+        }`}
     >
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
 
@@ -96,7 +95,7 @@ export default function Navbar() {
         </button>
 
         {/* Desktop Nav */}
-        <nav className="hidden items-center gap-7 lg:flex">
+        {/* <nav className="hidden items-center gap-7 lg:flex">
           {navLinks.map((link) => (
             <button
               key={link.label}
@@ -110,7 +109,7 @@ export default function Navbar() {
               {link.label}
             </button>
           ))}
-        </nav>
+        </nav> */}
 
         {/* Right actions */}
         <div className="flex items-center gap-3">
