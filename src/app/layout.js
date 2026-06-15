@@ -75,7 +75,7 @@ export default function RootLayout({ children }) {
         {children}
         <MobileStickyCTA />
         <GoogleAnalytics gaId="G-GVR1RYVJCS" />
-        <GoogleTagManager gaId="G-WSQX4V4H"/>
+        <GoogleTagManager gaId="GTM-WSQX4V4H" />
 
         <Script id="meta-pixel" strategy="afterInteractive">
           {`
