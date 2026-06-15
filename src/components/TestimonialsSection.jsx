@@ -60,9 +60,9 @@ export default function TestimonialsSection() {
 
         <SectionHeading
           centered
-          eyebrow="Resident Experiences"
-          title="What Living With Uniliv Feels Like."
-          description="Real experiences from students and professionals who chose a more comfortable and professionally managed way of living."
+          eyebrow="What Living With Uniliv Feels Like"
+          title="Hear From Our Residents."
+          description="Real stories from students and professionals living with Uniliv."
         />
 
         {/* Bento */}

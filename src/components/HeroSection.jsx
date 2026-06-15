@@ -89,10 +89,10 @@ export default function HeroSection() {
                 custom={0.1}
                 className="text-[44px] font-bold leading-tight text-black sm:text-[56px] lg:text-[64px] lg:leading-snug"
               >
-                Professionally Managed Spaces {" "}
+                Fully managed Hostel/PG residences {" "}
 
                 <span className="text-[#F38744] sm:text-[56px] lg:text-7xl">
-                  That Actually Feel Comfortable
+                  Stay Better. Live Easier.
                 </span>
               </motion.h1>
 
@@ -101,9 +101,7 @@ export default function HeroSection() {
                 custom={0.2}
                 className="mt-7 max-w-2xl text-lg leading-8 text-neutral-600 lg:text-xl"
               >
-                Move into fully managed stays with meals,
-                Wi-Fi, housekeeping and zero brokerage —
-                designed for students and professionals.
+                Move into Fully managed spaces with in-house meals, Wi-Fi, housekeeping and security for students and professionals. 
               </motion.p>
 
               {/* Stats */}

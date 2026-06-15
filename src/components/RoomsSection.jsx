@@ -57,7 +57,7 @@ export default function RoomsSection() {
                     centered
                     eyebrow="Our Spaces"
                     title="Find Your Perfect Fit"
-                    description="Comfortable, thoughtfully designed spaces for students and working professionals."
+                    description="Choose from premium stays designed around your lifestyle."
                 />
 
                 <div className="mt-14 grid gap-7 lg:grid-cols-3">

@@ -49,8 +49,8 @@ export default function AmenitiesSection() {
           <div>
             <SectionHeading
               eyebrow="Everything Included"
-              title="Everything You Need, Already Taken Care Of."
-              description="Professionally managed spaces with the essentials already handled — so daily living feels easier from day one."
+              title="Live Comfortably From Day One."
+              description="Meals, Wi-Fi, housekeeping, Security, maintenance and support - all under one roof."
             />
           </div>
 

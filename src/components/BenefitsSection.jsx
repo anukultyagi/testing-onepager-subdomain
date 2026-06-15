@@ -37,7 +37,7 @@ export default function BenefitsSection() {
             <SectionHeading
               eyebrow="Why people choose Uniliv"
               title="Designed For Easier Everyday Living."
-              description="Professionally managed living spaces designed to reduce daily hassle — so you can focus on work, studies and living comfortably."
+              description="Professionally managed living spaces designed to reduce daily hassle Simple, comfortable and professionally managed living from day one."
             />
 
           </div>
@@ -53,9 +53,9 @@ export default function BenefitsSection() {
                 <div
                   key={benefit.title}
                   className={`pb-10 ${index !==
-                      benefits.length - 1
-                      ? "border-b border-[#F3D4BF]"
-                      : ""
+                    benefits.length - 1
+                    ? "border-b border-[#F3D4BF]"
+                    : ""
                     }`}
                 >
                   <div className="flex gap-4 sm:gap-5">

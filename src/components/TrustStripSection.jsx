@@ -5,15 +5,15 @@ import Section from "@/components/ui/Section";
 const trustItems = [
   {
     value: "10,000+",
-    label: "Residents have stayed with Uniliv",
+    label: "Residents",
   },
   {
     value: "24×7",
-    label: "Security & support",
+    label: "Support",
   },
   {
     value: "4.8/5",
-    label: "Resident satisfaction",
+    label: "Rating",
   },
   {
     value: "Move-In Ready",
@@ -57,9 +57,7 @@ export default function TrustStripSection() {
 
           {/* Supporting sentence */}
           <p className="mx-auto mt-10 max-w-3xl text-sm leading-7 text-(--text-secondary)">
-            Meals, housekeeping, comfort and support —
-            thoughtfully managed so you can focus on
-            living, studying and growing.
+            We handle the everyday essentials, so you can focus on what matters most.
           </p>
         </div>
       </Container>
