@@ -29,7 +29,7 @@ export default function MealsSection() {
             <div className="overflow-hidden rounded-2xl border border-[#F3D4BF] bg-white shadow-[0_12px_30px_rgba(0,0,0,0.04)]">
               <div className="relative h-[320px] sm:h-[420px] lg:h-[520px]">
                 <Image
-                  src="https://images.unsplash.com/photo-1544025162-d76694265947?w=1200&q=80"
+                  src="/assets/uniliv-campaign-meals.png"
                   alt="Fresh meals at Uniliv"
                   fill
                   className="object-cover"
@@ -94,7 +94,7 @@ export default function MealsSection() {
 
             {/* CTA */}
             <a
-              href="/sample-menu.pdf"
+              href="/assets/uniliv-sample-menu.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-8 inline-flex h-12 items-center justify-center rounded-md bg-[#F38744] px-6 font-semibold text-white transition duration-300 hover:-translate-y-[2px] hover:opacity-90"

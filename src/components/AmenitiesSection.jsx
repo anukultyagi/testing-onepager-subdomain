@@ -9,29 +9,28 @@ const amenities = [
     title: "Fast Wi-Fi",
     description:
       "Reliable high-speed internet for work, study and everyday entertainment.",
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80",
+    image: "/assets/uniliv-amenities-wifi.png",
   },
   {
     title: "Housekeeping",
     description:
       "Regular cleaning support so your space stays fresh and comfortable.",
     image:
-      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=80",
+      "/assets/uniliv-amenities-housekeeping.png",
   },
   {
     title: "24/7 Security",
     description:
       "Safe and professionally managed spaces designed for peace of mind.",
     image:
-      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=80",
+      "/assets/uniliv-amenities-security.png",
   },
   {
     title: "Professional Laundary",
     description:
       "Comfortable spaces designed to make everyday living feel easier.",
     image:
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200&q=80",
+      "/assets/uniliv-amenities-laundary.png",
   },
 ];
 
@@ -98,7 +97,7 @@ export default function AmenitiesSection() {
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover transition duration-700 group-hover:scale-105"
+                    className="object-fill transition duration-700 group-hover:scale-105"
                   />
                 </div>
 
