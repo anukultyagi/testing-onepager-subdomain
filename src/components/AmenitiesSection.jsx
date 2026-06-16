@@ -26,7 +26,7 @@ const amenities = [
       "/assets/uniliv-amenities-security.png",
   },
   {
-    title: "Professional Laundary",
+    title: "Professional Laundry",
     description:
       "Comfortable spaces designed to make everyday living feel easier.",
     image:
@@ -97,7 +97,7 @@ export default function AmenitiesSection() {
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-fill object-top transition duration-700 group-hover:scale-105"
+                    className="object-cover object-top transition duration-700 group-hover:scale-105"
                   />
                 </div>
 
