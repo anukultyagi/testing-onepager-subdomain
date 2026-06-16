@@ -199,7 +199,14 @@ export default function LeadForm() {
       </div>
 
       {/* City */}
+      <label
+        htmlFor="city-select"
+        className="sr-only"
+      >
+        Select Preferred City
+      </label>
       <select
+        id="city-select"
         name="city"
         value={formData.city}
         onChange={
