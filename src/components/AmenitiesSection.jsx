@@ -97,7 +97,7 @@ export default function AmenitiesSection() {
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-fill transition duration-700 group-hover:scale-105"
+                    className="object-fill object-top transition duration-700 group-hover:scale-105"
                   />
                 </div>
 
