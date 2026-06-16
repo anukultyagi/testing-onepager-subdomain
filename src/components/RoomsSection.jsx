@@ -13,14 +13,12 @@ import {
 } from "lucide-react";
 
 
-
-
 const rooms = [
     {
         title: "Private Room",
         description:
             "Maximum privacy and personal comfort.",
-        price: "₹18,999/mo",
+        price: "₹19,999/mo",
         badge: "Most Preferred",
         badgeType: "orange",
         image: "/assets/uniliv-campaign-single-room-thumbnail.webp",
@@ -29,7 +27,7 @@ const rooms = [
         title: "Double Sharing",
         description:
             "Balanced comfort and affordability.",
-        price: "₹12,499/mo",
+        price: "₹15,999/mo",
         badge: "Filling Fast",
         badgeType: "green",
         image: "/assets/uniliv-campaign-double-room-thumbnail.webp"
@@ -38,7 +36,7 @@ const rooms = [
         title: "Triple Sharing",
         description:
             "Smart and affordable shared living.",
-        price: "₹9,999/mo",
+        price: "₹12,499/mo",
         badge: "Best Value",
         badgeType: "orange",
         image: "/assets/uniliv-campaign-triple-room-thumbnail.webp",
