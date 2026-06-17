@@ -63,7 +63,7 @@ export async function POST(request) {
 
     // Send to Google Sheets
     try {
-      fetch(process.env.GOOGLE_SHEET_WEBHOOK_URL, {
+      const response = await fetch(process.env.GOOGLE_SHEET_WEBHOOK_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -76,6 +76,10 @@ export async function POST(request) {
           source: "meta_ads",
         }),
       });
+
+      if (!response.ok) {
+        console.error("Google Sheet webhook failed:", response.status);
+      }
     } catch (sheetError) {
       console.error("Google Sheet Error:", sheetError);
     }
