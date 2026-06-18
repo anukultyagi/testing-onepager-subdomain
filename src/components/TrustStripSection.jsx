@@ -9,7 +9,7 @@ const stats = [
   },
   {
     value: "50+",
-    label: "Properties",
+    label: "Managed Properties",
   },
   {
     value: "24×7",
