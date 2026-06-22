@@ -80,7 +80,7 @@ export default function FinalCTASection() {
                             </button>
 
                             <a
-                                href={`https://wa.me/${CONTACT.whatsapp}`}
+                                href={`https://wa.me/${CONTACT.whatsapp}?text=Hi%2C%20I%20am%20Looking%20for%20accomodation`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-[#F3D4BF] bg-white px-6 font-semibold text-(--text-primary) transition duration-300 hover:-translate-y-[2px]"
@@ -88,6 +88,7 @@ export default function FinalCTASection() {
                                 <MessageCircleMore size={18} />
                                 Talk to Our Team
                             </a>
+
                         </div>
                     </div>
                 </div>

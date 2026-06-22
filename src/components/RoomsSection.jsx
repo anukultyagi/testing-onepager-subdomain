@@ -139,14 +139,12 @@ export default function RoomsSection() {
                                     </button>
 
                                     <a
-                                        href={`https://wa.me/${CONTACT.whatsapp}`}
-
+                                        href={`https://wa.me/${CONTACT.whatsapp}?text=Hi%2C%20I%20am%20Looking%20for%20accomodation`}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-flex text-sm items-center justify-center gap-2 rounded-md border border-emerald-200 bg-emerald-50 px-4 py-3 font-semibold text-emerald-700 transition duration-300 hover:-translate-y-[2px] hover:bg-emerald-100"
                                     >
                                         <MessageCircleMore size={16} />
-
                                         WhatsApp
                                     </a>
                                 </div>
