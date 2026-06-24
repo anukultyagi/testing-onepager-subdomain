@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import MobileStickyCTA from "@/components/MobileStickyCTA";
 import Script from "next/script";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -76,6 +77,7 @@ export default function RootLayout({ children }) {
         <MobileStickyCTA />
         <GoogleAnalytics gaId="G-GVR1RYVJCS" />
         <GoogleTagManager gtmId="GTM-WSQX4V4H" />
+        <Analytics />
 
         <Script id="meta-pixel" strategy="afterInteractive">
           {`
